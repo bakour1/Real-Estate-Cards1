@@ -1,0 +1,249 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html {
+  font-size: 13px;
+}
+
+@media (min-width: 500px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  background-color: #F7F7F7;
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24.6875rem, 1fr));
+  gap: 1.875rem;
+  padding: 1.25rem;
+}
+
+section {
+  background-color: #fff;
+  position: relative;
+}
+
+section .featured {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  padding: .3125rem .625rem;
+  padding-right: .125rem;
+  background-color: #EA723D;
+  color: #fff;
+  text-transform: capitalize;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+}
+
+section .featured::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border: .875rem solid transparent;
+  border-left-color: tomato;
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+
+section figure .box-img {
+  aspect-ratio: 79/52;
+  position: relative;
+  overflow: hidden;
+}
+
+section figure .box-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section figure .box-img>*:not(img) {
+  position: absolute;
+}
+
+section figure .box-img span {
+  background-color: #DD3333;
+  color: #fff;
+  font-size: .875rem;
+  text-transform: capitalize;
+  padding: .3125rem .625rem;
+  position: absolute;
+  z-index: 9;
+  bottom: 1.25rem;
+  left: 1.25rem;
+}
+
+section figure .box-img .icons {
+  position: absolute;
+  z-index: 9;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+}
+
+section figure .box-img .icons i {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+section figure .box-img .icons i:hover {
+  color: #DD3333;
+}
+
+section figure .box-img>.view {
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 1rem;
+  text-transform: capitalize;
+  padding: 1rem 1.875rem;
+  border: .1875rem solid #fff;
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+section figure .box-img .view a {
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+section figure .box-img::after {
+  content: '';
+  width: 0;
+  height: 100%;
+  background-color: #15a4b783;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+section:hover .box-img::after {
+  width: 100%;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+section:hover .box-img>.view {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: .4s;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+section figure figcaption {
+  padding: 1.5625rem;
+}
+
+section figure figcaption h3 {
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+section figure figcaption p {
+  margin-block: 1.3rem;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #999;
+  font-weight: 600;
+}
+
+section figure figcaption .info {
+  display: flex;
+  align-items: center;
+  gap: .9375rem;
+  flex-flow: row wrap;
+}
+
+section figure figcaption .info>.property {
+  display: flex;
+  flex-direction: column;
+  gap: .875rem;
+}
+
+section figure figcaption .info>.property h4 {
+  font-size: 1rem;
+  color: #000;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+section figure figcaption .info>.property .quantity {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+
+section figure figcaption .info>.property .quantity img {
+  width: 1.875rem;
+  object-fit: contain;
+}
+
+section figure figcaption .info>.property .quantity span {
+  font-size: 1rem;
+  color: #333;
+}
+
+section figure figcaption .info>.property .quantity span:nth-last-of-type(1) {
+  color: #999;
+}
+
+section figure figcaption .sale {
+  margin-top: 1.5625rem;
+  display: flex;
+  flex-direction: column;
+  gap: .625rem;
+}
+
+section figure figcaption .sale span.text {
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+section figure figcaption .sale span.num {
+  color: #28A79B;
+  font-size: 1.875rem;
+}
